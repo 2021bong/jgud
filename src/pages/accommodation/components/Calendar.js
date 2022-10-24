@@ -44,7 +44,6 @@ const Calendar = ({ firstShow, setFirstShow, secondShow, setSecondShow, align })
   };
 
   return (
-    <>
       <S.Main align={align}>
         <div className='container'>
           <FontAwesomeIcon icon={faCalendar} className='calendar-icon' onClick={handleFirstInput} />
@@ -95,7 +94,6 @@ const Calendar = ({ firstShow, setFirstShow, secondShow, setSecondShow, align })
           <FontAwesomeIcon icon={faChevronDown} size='sm' onClick={handleSecondInput} className='chevron-icon' />
         </div>
       </S.Main>
-    </>
   );
 };
 
