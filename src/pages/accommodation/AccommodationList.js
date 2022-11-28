@@ -46,7 +46,6 @@ const AccommodationList = () => {
       .then((res) => {
         setList(res.data);
         setLoading(false);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -64,9 +63,7 @@ const AccommodationList = () => {
   };
 
   const handleDetailRegion = (e) => {
-    const newSelectedCity = city.find((el) => {
-      return el.detail.includes(e.target.textContent) ? el.title : null;
-    }).title;
+    const newSelectedCity = city.find((el) => el.detail.includes(e.target.textContent)).title;
     setSelectedCity(newSelectedCity);
     setSelectedRegion(e.target.textContent);
   };
@@ -113,7 +110,6 @@ const AccommodationList = () => {
         url = `http://localhost:8000/accommodations/${param}${handleSelectUrl(id)}`;
       }
       axios
-        // .get(`/data/accommodation/accommodation.json`)
         .get(url)
         .then((res) => {
           setList(res.data);
